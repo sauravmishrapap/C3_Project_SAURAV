@@ -16,13 +16,11 @@ class RestaurantTest {
     public void setup(){
         LocalTime openingTime = LocalTime.parse("10:30:00");
         LocalTime closingTime = LocalTime.parse("22:00:00");
-        LocalTime closingTime1 = LocalTime.parse("10:45:00");
         restaurant =new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime);
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
         initialMenuSize = restaurant.getMenu().size();
         restaurant.addToMenu("Sizzling brownie",319);
-        res = new Restaurant("Amelie's cafe","Chennai",openingTime,closingTime1);
     }
 
     //REFACTOR ALL THE REPEATED LINES OF CODE
@@ -33,14 +31,14 @@ class RestaurantTest {
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
         setup();
-        assertTrue(restaurant.isRestaurantOpen(LocalTime.parse("17:30:00")));
+        assertTrue(restaurant.isRestaurantOpen(LocalTime.parse("23:30:00")));
     }
 
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
         setup();
-        assertFalse(res.isRestaurantOpen(LocalTime.parse("23:00:00")));
+        assertFalse(restaurant.isRestaurantOpen(LocalTime.parse("17:00:00")));
     }
 
     @Test
