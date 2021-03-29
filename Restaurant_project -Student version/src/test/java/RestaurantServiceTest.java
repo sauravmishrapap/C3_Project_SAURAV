@@ -30,7 +30,7 @@ class RestaurantServiceTest {
         setup();
         Restaurant res1;
         Restaurant obj;
-        res1 = service.findRestaurantByName("dakin9");
+        res1 = service.findRestaurantByName("Amelie's cafe");
         assertNotNull(res1);
     }
 
@@ -40,7 +40,7 @@ class RestaurantServiceTest {
         //WRITE UNIT TEST CASE HERE
         setup();
         Restaurant obj;
-        assertThrows(RestaurantNotFoundException.class, () -> {service.findRestaurantByName("Amelie's cafe");}
+        assertThrows(RestaurantNotFoundException.class, () -> {service.findRestaurantByName("Girija");}
         );
     }
     //<<<<<<<<<<<<<<<<<<<<SEARCHING>>>>>>>>>>>>>>>>>>>>>>>>>>
