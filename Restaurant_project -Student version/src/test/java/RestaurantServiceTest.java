@@ -32,7 +32,6 @@ class RestaurantServiceTest {
         Restaurant obj;
         res1 = service.findRestaurantByName("Amelie's cafe");
         assertNotNull(res1);
-        //assertEquals(res1,restaurant);
     }
 
     //You may watch the video by Muthukumaran on how to write exceptions in Course 3: Testing and Version control: Optional content

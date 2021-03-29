@@ -33,14 +33,14 @@ class RestaurantTest {
     public void is_restaurant_open_should_return_true_if_time_is_between_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
         setup();
-        assertTrue(restaurant.isRestaurantOpen());
+        assertTrue(restaurant.isRestaurantOpen(LocalTime.parse("17:30:00")));
     }
 
     @Test
     public void is_restaurant_open_should_return_false_if_time_is_outside_opening_and_closing_time(){
         //WRITE UNIT TEST CASE HERE
         setup();
-        assertFalse(res.isRestaurantOpen());
+        assertFalse(res.isRestaurantOpen(LocalTime.parse("23:00:00")));
     }
 
     @Test
